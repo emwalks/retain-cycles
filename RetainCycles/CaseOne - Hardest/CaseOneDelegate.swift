@@ -1,0 +1,3 @@
+protocol CaseOneDelegate {
+    func somethingHappened()
+}
