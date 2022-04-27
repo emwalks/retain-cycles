@@ -2,7 +2,7 @@ import UIKit
 import Foundation
 
 class ImagePicker: NSObject, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-    private var viewController: UIViewController?
+    private var viewController: UIViewController
     private var picker: UIImagePickerController
     
     init(viewController: UIViewController) {
@@ -15,12 +15,12 @@ class ImagePicker: NSObject, UIImagePickerControllerDelegate, UINavigationContro
     }
     
     func pickPhoto() {
-        viewController?.present(picker, animated: true)
+        viewController.present(picker, animated: true)
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         picker.dismiss(animated: true) {
-            self.viewController?.dismiss(animated: true)
+            self.viewController.dismiss(animated: true)
         }
         
     }
