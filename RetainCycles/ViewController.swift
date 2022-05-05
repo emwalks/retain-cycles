@@ -23,7 +23,7 @@ class ViewController: UIViewController {
     
     lazy var presentCaseTwoButton: UIButton = {
         let button = UIButton(configuration: .filled(), primaryAction: UIAction(handler: { _ in
-            self.present(CaseTwoViewController(), animated: true)
+            self.present(CaseTwoViewController(presenter: CaseTwoPresenter()), animated: true)
         }))
         
         button.setTitle("Present Case Two", for: .normal)

@@ -4,8 +4,8 @@ class CaseTwoViewController: UIViewController {
     let presenter: CaseTwoPresenter
     let label = UILabel()
     
-    init() {
-        presenter = CaseTwoPresenter()
+    init(presenter: CaseTwoPresenter) {
+        self.presenter = presenter
         
         super.init(nibName: nil, bundle: nil)
         
