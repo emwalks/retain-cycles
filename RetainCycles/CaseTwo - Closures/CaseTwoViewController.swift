@@ -9,10 +9,10 @@ class CaseTwoViewController: UIViewController {
         
         super.init(nibName: nil, bundle: nil)
         
-        presenter.handler = { result in
+        presenter.handler = { [weak self] result in
             switch result {
-            case let .success(successString): self.label.text = successString
-            default: self.label.text = "Something went wrong!"
+            case let .success(successString): self?.label.text = successString
+            default: self?.label.text = "Something went wrong!"
             }
         }
         
