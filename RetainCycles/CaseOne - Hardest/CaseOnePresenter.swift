@@ -1,7 +1,7 @@
 import UIKit
 
 class CaseOnePresenter: CaseOneDelegate {
-    var navigationController: UINavigationController?
+    weak var navigationController: UINavigationController?
     let presentingViewController: UIViewController
     
     init(presentingViewController: UIViewController) {

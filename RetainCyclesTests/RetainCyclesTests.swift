@@ -7,6 +7,21 @@ class RetainCyclesTests: XCTestCase {
     
     func testCaseOneRetainCycles() {
         
+        // given
+        // A case One VC
+        let presenter = CaseOnePresenter(presentingViewController: UIViewController())
+        let viewController = CaseOneViewController(delegate: presenter)
+        presenter.present(viewController)
+        
+        // when the VC it is dismissed)
+        viewController.dismiss(animated: false)
+        
+        //then
+        // case three VC is Nil
+        addTeardownBlock { [ weak viewController] in
+            XCTAssertNil(viewController, "There is still a Case One View Controller in memory")
+        }
+        
     }
     
     func testCaseTwoRetainCycles() {
