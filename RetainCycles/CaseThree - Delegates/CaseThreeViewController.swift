@@ -33,3 +33,7 @@ class CaseThreeViewController: UIViewController {
         picker.pickPhoto()
     }
 }
+
+//There is an instance of the case three VC after it is dismissed.
+// is the picker holding a ref to it?
+

@@ -26,5 +26,20 @@ class RetainCyclesTests: XCTestCase {
     
     func testCaseThreeRetainCycles() {
         
+        // given
+        // A case Three VC
+        let viewController = CaseThreeViewController()
+        
+        // when
+        // you pick a photo
+        // (and the VC it is dismissed)
+        viewController.didTapButton()
+        viewController.picker.imagePickerController(viewController.picker.picker, didFinishPickingMediaWithInfo: [:])
+        
+        //then
+        // case three VC is Nil
+        addTeardownBlock { [ weak viewController] in
+            XCTAssertNil(viewController, "There is still a Case Three View Controller in memory")
+        }
     }
 }

@@ -3,7 +3,7 @@ import Foundation
 
 class ImagePicker: NSObject, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     private var viewController: UIViewController
-    private var picker: UIImagePickerController
+    var picker: UIImagePickerController
     
     init(viewController: UIViewController) {
         self.viewController = viewController
